@@ -11,6 +11,7 @@ import {MyValidators} from "./my.validators";
 // export class AppComponent {
 export class AppComponent implements  OnInit {
   form: FormGroup | any
+  appState='on'
 
 
 
@@ -40,7 +41,7 @@ export class AppComponent implements  OnInit {
     if(this.form.valid){
       console.log('Form:', this.form)
       const formData = {...this.form.value}
-      console.log('formData: ',formData)
+      console.log('forпуmData: ',formData)
       this.form.reset()
     }
   }
@@ -63,6 +64,10 @@ export class AppComponent implements  OnInit {
     const control = new FormControl('', Validators.required);
    <FormArray> this.form.get('skills').push(control)
 
+  }
+
+  handleChange() {
+    console.log(this.appState)
   }
 }
 
